@@ -1,17 +1,15 @@
+/** URL pública do site (Vercel). */
+export const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://gabriel-shopping.vercel.app";
+
 /**
- * Links dos botões — substitua pelos links reais do WhatsApp quando receber.
- * Formato: https://wa.me/55XXXXXXXXXXX ou link de grupo https://chat.whatsapp.com/...
+ * Link do grupo WhatsApp (pgin39 / Aliança de Sucesso-RR).
+ * Formato: https://chat.whatsapp.com/...
  */
 export const whatsappLinks = {
-  principal:
-    process.env.NEXT_PUBLIC_WHATSAPP_PRINCIPAL ??
-    "https://wa.me/5511999999999?text=Olá! Vim pelo site Gabriel Shopping.",
-  grupo1:
-    process.env.NEXT_PUBLIC_WHATSAPP_GRUPO_1 ??
-    "https://chat.whatsapp.com/SEU_LINK_GRUPO_1",
-  grupo2:
-    process.env.NEXT_PUBLIC_WHATSAPP_GRUPO_2 ??
-    "https://chat.whatsapp.com/SEU_LINK_GRUPO_2",
+  grupo:
+    process.env.NEXT_PUBLIC_WHATSAPP_GRUPO ??
+    "https://chat.whatsapp.com/BlD531fLMmV2rtqcUzG2kf",
 } as const;
 
 export type ProductCategory = "beleza" | "suplementos";

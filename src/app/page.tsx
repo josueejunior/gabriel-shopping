@@ -9,6 +9,7 @@ import {
 } from "@/config/site";
 
 const categories: ProductCategory[] = ["beleza", "suplementos"];
+const grupo = whatsappLinks.grupo;
 
 export default function Home() {
   return (
@@ -38,11 +39,12 @@ export default function Home() {
             </div>
           </div>
           <WhatsAppButton
-            href={whatsappLinks.principal}
+            href={grupo}
+            variant="group"
             className="!min-h-10 !w-auto shrink-0 !px-4 !py-2 text-xs sm:!min-h-0 sm:!px-6 sm:!py-3 sm:text-sm"
           >
-            <span className="hidden min-[400px]:inline">Falar conosco</span>
-            <span className="min-[400px]:hidden">WhatsApp</span>
+            <span className="hidden min-[400px]:inline">Entrar no grupo</span>
+            <span className="min-[400px]:hidden">Grupo</span>
           </WhatsAppButton>
         </div>
       </header>
@@ -56,25 +58,18 @@ export default function Home() {
                 Linha BHC · Beleza & Suplementos
               </p>
               <h1 className="font-display text-[1.65rem] font-bold leading-[1.15] text-white min-[400px]:text-3xl sm:text-5xl lg:text-6xl">
-                Seu catálogo{" "}
+                Catálogo{" "}
                 <span className="bg-gradient-to-r from-amber-300 via-amber-400 to-orange-400 bg-clip-text text-transparent">
-                  premium
-                </span>{" "}
-                em um clique
+                  no grupo
+                </span>
               </h1>
               <p className="mt-4 text-base leading-relaxed text-zinc-400 sm:mt-6 sm:max-w-lg sm:text-lg">
-                Produtos selecionados de beleza e performance. Peça direto no
-                WhatsApp ou entre nos grupos para ofertas e novidades.
+                Todos os produtos, ofertas e novidades são postados no grupo do
+                WhatsApp. Entre, participe e acompanhe em tempo real.
               </p>
-              <div className="mt-6 flex flex-col gap-2.5 sm:mt-8 sm:flex-row sm:flex-wrap sm:gap-3">
-                <WhatsAppButton href={whatsappLinks.principal}>
-                  Chamar no WhatsApp
-                </WhatsAppButton>
-                <WhatsAppButton href={whatsappLinks.grupo1} variant="group">
-                  Grupo de ofertas 1
-                </WhatsAppButton>
-                <WhatsAppButton href={whatsappLinks.grupo2} variant="group">
-                  Grupo de ofertas 2
+              <div className="mt-6 sm:mt-8">
+                <WhatsAppButton href={grupo} variant="group" className="sm:!px-10">
+                  Entrar no grupo
                 </WhatsAppButton>
               </div>
             </div>
@@ -102,7 +97,7 @@ export default function Home() {
             {[
               { value: "BHC", label: "Marca parceira" },
               { value: "6+", label: "Produtos" },
-              { value: "100%", label: "WhatsApp" },
+              { value: "Grupo", label: "Ofertas diárias" },
             ].map((item) => (
               <div key={item.label} className="px-2 py-1 text-center sm:px-4">
                 <p className="font-display text-lg font-bold text-amber-400 sm:text-2xl">
@@ -146,8 +141,8 @@ export default function Home() {
                   {categoryLabels[category]}
                 </h2>
                 <p className="mt-2 text-sm leading-relaxed text-zinc-500">
-                  Toque em &quot;Pedir no WhatsApp&quot; — a mensagem já vai com o
-                  nome do produto.
+                  Veja o catálogo aqui e entre no grupo para acompanhar preços,
+                  promoções e disponibilidade.
                 </p>
               </div>
               <div className="flex flex-col gap-4 sm:grid sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
@@ -155,7 +150,7 @@ export default function Home() {
                   <ProductCard
                     key={product.id}
                     product={product}
-                    whatsappHref={whatsappLinks.principal}
+                    grupoHref={grupo}
                   />
                 ))}
               </div>
@@ -166,17 +161,15 @@ export default function Home() {
         <section className="mx-auto max-w-6xl px-4 sm:px-6">
           <div className="overflow-hidden rounded-2xl border border-amber-500/20 bg-gradient-to-br from-zinc-900 via-black to-zinc-950 p-6 text-center sm:rounded-3xl sm:p-12">
             <h2 className="font-display text-xl font-bold text-white sm:text-3xl">
-              Entre no grupo e não perca promoção
+              Entre no grupo agora
             </h2>
             <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-zinc-400 sm:mt-4 sm:text-base">
-              Ofertas e novidades direto no seu WhatsApp.
+              É no grupo que postamos todos os produtos, ofertas e novidades.
+              Não perca promoção — entre agora.
             </p>
-            <div className="mt-6 flex flex-col gap-2.5 sm:mt-8 sm:flex-row sm:justify-center sm:gap-3">
-              <WhatsAppButton href={whatsappLinks.grupo1} variant="group">
-                Entrar no grupo 1
-              </WhatsAppButton>
-              <WhatsAppButton href={whatsappLinks.grupo2} variant="group">
-                Entrar no grupo 2
+            <div className="mt-6 sm:mt-8">
+              <WhatsAppButton href={grupo} variant="group" className="sm:!px-10">
+                Entrar no grupo
               </WhatsAppButton>
             </div>
           </div>
@@ -202,12 +195,9 @@ export default function Home() {
               Beleza & Suplementos · Linha BHC
             </p>
           </div>
-          <div className="flex w-full max-w-xs flex-col gap-2 sm:max-w-none sm:flex-row sm:justify-center sm:gap-3">
-            <WhatsAppButton
-              href={whatsappLinks.principal}
-              className="!text-xs sm:!text-sm"
-            >
-              Atendimento
+          <div className="flex w-full max-w-xs flex-col gap-2 sm:max-w-none sm:justify-center">
+            <WhatsAppButton href={grupo} variant="group" className="!text-xs sm:!text-sm">
+              Entrar no grupo
             </WhatsAppButton>
           </div>
           <p className="border-t border-zinc-800/80 pt-6 text-[11px] text-zinc-600 sm:text-sm">
@@ -218,11 +208,11 @@ export default function Home() {
       </footer>
 
       <a
-        href={whatsappLinks.principal}
+        href={grupo}
         target="_blank"
         rel="noopener noreferrer"
         className="bottom-safe fixed right-4 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-green-500 to-green-600 text-white shadow-[0_4px_24px_rgba(34,197,94,0.45)] transition-transform active:scale-95 sm:right-6 sm:hidden"
-        aria-label="Abrir WhatsApp"
+        aria-label="Entrar no grupo do WhatsApp"
       >
         <svg className="h-7 w-7" viewBox="0 0 24 24" fill="currentColor">
           <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />

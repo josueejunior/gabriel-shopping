@@ -6,15 +6,16 @@ Site em Next.js pronto para deploy na [Vercel](https://vercel.com).
 
 1. Faça push deste repositório no GitHub (pasta `web` como raiz do projeto **ou** configure o **Root Directory** como `web` nas configurações do projeto na Vercel).
 2. Importe o repositório em [vercel.com/new](https://vercel.com/new).
-3. Em **Environment Variables**, adicione:
-   - `NEXT_PUBLIC_WHATSAPP_PRINCIPAL`
-   - `NEXT_PUBLIC_WHATSAPP_GRUPO_1`
-   - `NEXT_PUBLIC_WHATSAPP_GRUPO_2`
+3. Em **Environment Variables**, adicione (opcional):
+   - `NEXT_PUBLIC_SITE_URL` — ex.: `https://gabriel-shopping.vercel.app`
+   - `NEXT_PUBLIC_WHATSAPP_GRUPO` — link de convite do grupo
 4. Deploy.
 
-## Links do WhatsApp
+## Links
 
-Edite `src/config/site.ts` ou use as variáveis de ambiente acima. Quando receber os links dos grupos, substitua os placeholders.
+O site público: [gabriel-shopping.vercel.app](https://gabriel-shopping.vercel.app).
+
+Todos os botões levam ao grupo do WhatsApp. Edite `src/config/site.ts` ou use `NEXT_PUBLIC_WHATSAPP_GRUPO` na Vercel.
 
 ## Desenvolvimento local
 

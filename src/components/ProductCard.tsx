@@ -4,17 +4,10 @@ import { WhatsAppButton } from "./WhatsAppButton";
 
 type ProductCardProps = {
   product: Product;
-  whatsappHref: string;
+  grupoHref: string;
 };
 
-export function ProductCard({ product, whatsappHref }: ProductCardProps) {
-  const message = encodeURIComponent(
-    `Olá! Tenho interesse no produto: ${product.name}`,
-  );
-  const href = whatsappHref.includes("?")
-    ? `${whatsappHref}&text=${message}`
-    : `${whatsappHref}?text=${message}`;
-
+export function ProductCard({ product, grupoHref }: ProductCardProps) {
   return (
     <article className="group relative flex flex-row overflow-hidden rounded-2xl border border-amber-500/15 bg-gradient-to-r from-zinc-900/90 to-black shadow-[inset_0_1px_0_rgba(212,175,55,0.08)] transition-all duration-300 sm:flex-col sm:bg-gradient-to-b sm:hover:border-pink-500/40 sm:hover:shadow-[0_0_40px_rgba(226,35,142,0.12)]">
       <div className="relative h-36 w-36 shrink-0 overflow-hidden bg-gradient-to-br from-zinc-900 via-zinc-950 to-black p-3 sm:aspect-square sm:h-auto sm:w-full sm:p-6">
@@ -46,8 +39,8 @@ export function ProductCard({ product, whatsappHref }: ProductCardProps) {
             </li>
           ))}
         </ul>
-        <WhatsAppButton href={href} variant="outline" className="mt-auto">
-          Pedir no WhatsApp
+        <WhatsAppButton href={grupoHref} variant="group" className="mt-auto">
+          Entrar no grupo
         </WhatsAppButton>
       </div>
     </article>
