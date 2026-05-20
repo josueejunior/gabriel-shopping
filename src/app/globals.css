@@ -19,8 +19,18 @@
 body {
   background: var(--background);
   color: var(--foreground);
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .font-display {
   font-family: var(--font-exo), system-ui, sans-serif;
+}
+
+.pb-safe {
+  padding-bottom: max(1.5rem, env(safe-area-inset-bottom, 0px));
+}
+
+.bottom-safe {
+  bottom: max(1.25rem, env(safe-area-inset-bottom, 0px));
 }
